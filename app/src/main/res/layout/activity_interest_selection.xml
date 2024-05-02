@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/blue_gradient_background"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/interests"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/you_may_select_upto_10_topics"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="391dp"
+        android:layout_height="119dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <CheckBox
+            android:id="@+id/checkBoxMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/blue_backgraound3"
+            android:button="@null"
+            android:padding="10dp"
+            android:text="@string/music"
+            android:theme="@style/MyCheckBox" />
+
+        <CheckBox
+            android:id="@+id/checkBoxDance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/blue_backgraound3"
+            android:button="@null"
+            android:padding="10dp"
+            android:text="@string/dance"
+            android:theme="@style/MyCheckBox" />
+        <CheckBox
+            android:id="@+id/checkBoxBasketball"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/blue_backgraound3"
+            android:button="@null"
+            android:padding="10dp"
+            android:text="@string/basketball"
+            android:theme="@style/MyCheckBox" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="426dp"
+        android:layout_height="115dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+
+        <CheckBox
+            android:id="@+id/checkBoxTechnology"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_backgraound3"
+            android:button="@null"
+            android:padding="10dp"
+            android:text="@string/technology"
+            android:theme="@style/MyCheckBox" />
+
+        <CheckBox
+            android:id="@+id/checkBoxWebDevelopment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/blue_backgraound3"
+            android:button="@null"
+            android:padding="10dp"
+            android:text="@string/web_development"
+            android:theme="@style/MyCheckBox" />
+
+        <CheckBox
+            android:id="@+id/checkBoxTesting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/blue_backgraound3"
+            android:button="@null"
+            android:padding="10dp"
+            android:text="@string/testing"
+            android:theme="@style/MyCheckBox" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="418dp"
+        android:layout_height="118dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <CheckBox
+            android:id="@+id/checkBoxAI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/blue_backgraound3"
+            android:button="@null"
+            android:padding="10dp"
+            android:text="@string/ai"
+            android:theme="@style/MyCheckBox" />
+
+        <CheckBox
+            android:id="@+id/checkBoxAlgorithms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/blue_backgraound3"
+            android:button="@null"
+            android:padding="10dp"
+            android:text="@string/algorithms"
+            android:theme="@style/MyCheckBox" />
+
+
+        <CheckBox
+            android:id="@+id/checkBoxDataStructure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/blue_backgraound3"
+            android:button="@null"
+            android:padding="10dp"
+            android:text="@string/data_structure"
+            android:theme="@style/MyCheckBox" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/green_rectangle_button"
+        android:layout_marginTop="20dp"
+        android:text="@string/next" />
+</LinearLayout>
