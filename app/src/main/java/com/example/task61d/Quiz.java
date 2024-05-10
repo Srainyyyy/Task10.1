@@ -15,9 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -43,32 +41,26 @@ public class Quiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_content);
         description = (String) getIntent().getExtras().get("description");
-        quiz();
+        initializeQuiz();
         fetchData();
     }
 
-    //初始化
-    private void quiz() {
+    // 初始化
+    private void initializeQuiz() {
         questionTextView = findViewById(R.id.textquestions);
         optionsRadioGroup = findViewById(R.id.answerGroup);
         progressBar = findViewById(R.id.progressBar);
         optionsRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.answer0) {
-                    checkAnswer(0, group.findViewById(checkedId));
-                } else if (checkedId == R.id.answer1) {
-                    checkAnswer(1, group.findViewById(checkedId));
-                } else if (checkedId == R.id.answer2) {
-                    checkAnswer(2, group.findViewById(checkedId));
-                } else if (checkedId == R.id.answer3) {
-                    checkAnswer(3, group.findViewById(checkedId));
-                }
+                RadioButton clicked = group.findViewById(checkedId);
+                int selectedOptionIndex = group.indexOfChild(clicked);
+                checkAnswer(selectedOptionIndex, clicked);
             }
         });
     }
 
-    //问题显示
+    // 显示问题
     private void displayQuestion(int questionIndex) {
         if (questions != null && !questions.isEmpty() && questionIndex < questions.size()) {
             Question question = questions.get(questionIndex);
@@ -77,20 +69,13 @@ public class Quiz extends AppCompatActivity {
 
             for (int i = 0; i < optionsRadioGroup.getChildCount(); i++) {
                 RadioButton optionButton = (RadioButton) optionsRadioGroup.getChildAt(i);
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        optionButton.setBackground(getResources().getDrawable(R.drawable.normal_option));
-                    }
-                }, 100);
-
+                optionButton.setBackground(getResources().getDrawable(R.drawable.normal_option));
                 optionButton.setText(question.getOptions().get(i));
             }
         }
     }
 
-    //检查答案
+    // 检查答案
     private void checkAnswer(int selectedOptionIndex, RadioButton clicked) {
         if (questions != null && !questions.isEmpty() && currentQuestionIndex < questions.size()) {
             Question currentQuestion = questions.get(currentQuestionIndex);
@@ -107,72 +92,27 @@ public class Quiz extends AppCompatActivity {
             if (currentQuestionIndex < questions.size()) {
                 displayQuestion(currentQuestionIndex);
             } else {
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        //在最终界面显示
-                        setContentView(R.layout.final_page);
-
-                        Button finish = findViewById(R.id.quit);
-                        Button restart = findViewById(R.id.restart);
-                        TextView showScore = findViewById(R.id.textshowscore);
-                        double init_score = (double) score / questions.size() * 100.0;
-                        int init_score_int = (int) init_score;
-                        showScore.setText(String.format("%d", init_score_int));
-
-
-                        TextView question1 = findViewById(R.id.question1);
-                        TextView answer1 = findViewById(R.id.answer1);
-                        TextView question2 = findViewById(R.id.question2);
-                        TextView answer2 = findViewById(R.id.answer2);
-                        TextView question3 = findViewById(R.id.question3);
-                        TextView answer3 = findViewById(R.id.answer3);
-
-                        //问题显示框
-                        question1.setText(questions.get(0).getQuestionText());
-                        answer1.setText(String.format("Correct Answer: %s", questions.get(0).getOptions().get(questions.get(0).getCorrectOptionIndex())));
-                        question2.setText(questions.get(1).getQuestionText());
-                        answer2.setText(String.format("Correct Answer: %s", questions.get(1).getOptions().get(questions.get(1).getCorrectOptionIndex())));
-                        question3.setText(questions.get(2).getQuestionText());
-                        answer3.setText(String.format("Correct Answer: %s", questions.get(2).getOptions().get(questions.get(2).getCorrectOptionIndex())));
-                        finish.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                finishAffinity();
-                            }
-                        });
-                        restart.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                restartApp();
-                            }
-                        });
-                    }
-                }, 100);
+                showFinalPage();
             }
         }
     }
 
-
-    //获取问题
+    // 获取问题数据
     private void fetchData() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://10.0.2.2:5000/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(new OkHttpClient.Builder().readTimeout(10, java.util.concurrent.TimeUnit.MINUTES).build()) // this will set the read timeout for 10mins (IMPORTANT: If not your request will exceed the default read timeout)
+                .client(new OkHttpClient.Builder().readTimeout(10, java.util.concurrent.TimeUnit.MINUTES).build())
                 .build();
 
         QuizApiService request = retrofit.create(QuizApiService.class);
 
-
-        request.getQuiz(description).enqueue(new Callback<QuizResponse>(){
+        request.getQuiz(description).enqueue(new Callback<QuizResponse>() {
             @Override
             public void onResponse(@NonNull Call<QuizResponse> call, @NonNull Response<QuizResponse> response) {
-
                 if (response.isSuccessful()) {
                     QuizResponse quizResponse = response.body();
-                    if(quizResponse != null){
+                    if (quizResponse != null) {
                         questions = quizResponse.getQuiz();
                         displayQuestion(currentQuestionIndex);
                     }
@@ -188,16 +128,52 @@ public class Quiz extends AppCompatActivity {
         });
     }
 
+    // 显示最终页面
+    private void showFinalPage() {
+        setContentView(R.layout.final_page);
 
+        Button restartButton = findViewById(R.id.restart);
+        TextView showScoreTextView = findViewById(R.id.textshowscore);
+        double initialScore = (double) score / questions.size() * 100.0;
+        int roundedScore = (int) initialScore;
+        showScoreTextView.setText(String.format("%d", roundedScore));
 
+        TextView[] questionTextViews = new TextView[]{
+                findViewById(R.id.question1),
+                findViewById(R.id.question2),
+                findViewById(R.id.question3)
+        };
+
+        TextView[] answerTextViews = new TextView[]{
+                findViewById(R.id.answer1),
+                findViewById(R.id.answer2),
+                findViewById(R.id.answer3)
+        };
+
+        for (int i = 0; i < Math.min(3, questions.size()); i++) {
+            Question question = questions.get(i);
+            questionTextViews[i].setText(question.getQuestionText());
+            String correctAnswer = question.getOptions().get(question.getCorrectOptionIndex());
+            answerTextViews[i].setText(String.format("Correct Answer: %s", correctAnswer));
+        }
+
+        restartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                restartApp();
+            }
+        });
+    }
+
+    // 重启应用
     public void restartApp() {
-        Intent i = new Intent(this, this.getClass());
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(i);
+        Intent intent = new Intent(this, this.getClass());
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
         finish();
     }
 
-    //Retrofit接口
+    // Retrofit接口
     interface QuizApiService {
         @GET("getQuiz")
         Call<QuizResponse> getQuiz(@Query("topic") String topic);

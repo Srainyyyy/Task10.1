@@ -32,13 +32,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp" />
 
-    <TextView
-        android:id="@+id/questionsAnsweredTextView"
-        style="@style/content_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp" />
 
     <LinearLayout
         android:layout_width="350dp"
@@ -145,16 +138,8 @@
         android:layout_gravity="center"
         android:background="@drawable/green_rectangle_button"
         android:layout_marginTop="20dp"
-        android:text="@string/take_new_quiz" />
+        android:text="@string/continu" />
 
-    <Button
-        android:id="@+id/quit"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/green_rectangle_button"
-        android:text="@string/finish" />
+
 
 </LinearLayout>

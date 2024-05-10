@@ -13,8 +13,7 @@
         android:layout_marginTop="100dp"
         android:paddingStart="50dp"
         android:text="@string/welcome"
-        android:textSize="30dp"
-        tools:ignore="RtlSymmetry" />
+        android:textSize="30dp"/>
 
     <TextView
         style="@style/myAppName"
@@ -22,8 +21,7 @@
         android:layout_height="wrap_content"
         android:paddingStart="50dp"
         android:text="@string/student"
-        android:textSize="50dp"
-        tools:ignore="RtlSymmetry" />
+        android:textSize="50dp"/>
 
     <TextView
         style="@style/myAppName"
@@ -31,8 +29,7 @@
         android:layout_height="wrap_content"
         android:paddingStart="50dp"
         android:text="@string/let_s_start_learning"
-        android:textSize="25dp"
-        tools:ignore="RtlSymmetry" />
+        android:textSize="25dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,8 +49,7 @@
             android:inputType="text"
             android:paddingStart="10dp"
             android:selectAllOnFocus="true"
-            android:shadowRadius="20"
-            tools:ignore="RtlSymmetry" />
+            android:shadowRadius="20" />
 
         <EditText
             android:id="@+id/editpassword"
@@ -67,8 +63,7 @@
             android:hint="@string/password"
             android:importantForAutofill="no"
             android:inputType="text"
-            android:selectAllOnFocus="true"
-            tools:ignore="RtlSymmetry" />
+            android:selectAllOnFocus="true" />
 
     </LinearLayout>
 
@@ -90,7 +85,6 @@
         android:backgroundTint="@android:color/transparent"
         android:layout_gravity="center"
         android:text="@string/need_an_account"
-        android:textSize="18sp"
-        tools:ignore="RtlSymmetry" />
+        android:textSize="18sp"/>
 
 </LinearLayout>
