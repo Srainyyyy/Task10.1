@@ -67,14 +67,15 @@
 
     </LinearLayout>
 
-    <Button
+    <android.widget.Button
         android:id="@+id/buttonLogin"
+        style="@style/MyButton"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="@string/button_login"
-        android:background="@drawable/green_rectangle_button"/>
+       />
 
     <Button
         android:id="@+id/buttonRegister"

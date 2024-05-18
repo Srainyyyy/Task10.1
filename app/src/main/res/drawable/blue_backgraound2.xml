@@ -1,7 +1,7 @@
 <!-- blue_gradient_background.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
-        android:startColor="#37DDF1"
+        android:startColor="#41BAC8"
         android:endColor="#2196F3"
         android:angle="45"
         />

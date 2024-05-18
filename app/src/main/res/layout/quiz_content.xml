@@ -5,6 +5,7 @@
     android:background="@drawable/blue_gradient_background"
     android:orientation="vertical">
 
+
     <TextView
         android:id="@+id/textWelcome"
         style="@style/content_font"
@@ -38,6 +39,13 @@
             android:progressDrawable="@drawable/progress_bar_decoration" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/blue_backgraound2"
+        android:orientation="vertical">
     <TextView
         style="@style/content_font"
         android:layout_width="wrap_content"
@@ -65,7 +73,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+
             android:background="@drawable/normal_option" />
 
         <RadioButton
@@ -84,8 +92,28 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/normal_option" />
 
+        <RadioButton
+            android:id="@+id/answer3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/normal_option" />
+
+
 
     </RadioGroup>
+    </LinearLayout>
+
+    <android.widget.Button
+        android:id="@+id/buttonNextQuestion"
+        android:background="@drawable/blue_backgraound2"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="@string/netxbutton" />
 
 
 </LinearLayout>

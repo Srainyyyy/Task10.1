@@ -6,14 +6,7 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/textCongratulation"
-        style="@style/myAppName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:textSize="20dp"
-        android:text="@string/enter_name" />
+
 
     <TextView
         android:id="@+id/textscore"
@@ -24,20 +17,14 @@
         android:textSize="30dp"
         android:text="@string/show_score" />
 
-    <TextView
-        android:id="@+id/textshowscore"
-        style="@style/content_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp" />
+
 
 
     <LinearLayout
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/blue_backgraound2"
         android:orientation="vertical">
 
@@ -66,7 +53,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
@@ -99,7 +86,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
@@ -130,13 +117,13 @@
 
 
     </LinearLayout>
-    <Button
+
+    <android.widget.Button
         android:id="@+id/restart"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/green_rectangle_button"
+        style="@style/MyButton"
         android:layout_marginTop="20dp"
         android:text="@string/continu" />
 

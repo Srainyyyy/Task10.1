@@ -156,12 +156,12 @@
             android:theme="@style/MyCheckBox" />
     </LinearLayout>
 
-    <Button
+    <android.widget.Button
         android:id="@+id/continueButton"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/green_rectangle_button"
+        style="@style/MyButton"
         android:layout_marginTop="20dp"
         android:text="@string/next" />
 </LinearLayout>

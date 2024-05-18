@@ -41,6 +41,8 @@ public class Question {
                 return 1;
             case "C":
                 return 2;
+            case "D":
+                return 3;
             default:
                 return -1;
         }

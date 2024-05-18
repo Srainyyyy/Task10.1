@@ -35,7 +35,8 @@
 
     <EditText
         android:id="@+id/usernameEditText"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="35dp"
         android:layout_below="@+id/imageAdmin"
         android:background="@drawable/round_corners_bg"
@@ -45,7 +46,8 @@
 
     <EditText
         android:id="@+id/emailEditText"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="35dp"
         android:background="@drawable/round_corners_bg"
         android:paddingStart="10dp"
@@ -55,7 +57,8 @@
 
     <EditText
         android:id="@+id/confirmEmailEditText"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="35dp"
         android:background="@drawable/round_corners_bg"
         android:paddingStart="10dp"
@@ -65,7 +68,8 @@
 
     <EditText
         android:id="@+id/passwordEditText"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="35dp"
         android:background="@drawable/round_corners_bg"
         android:paddingStart="10dp"
@@ -76,7 +80,8 @@
 
     <EditText
         android:id="@+id/confirmPasswordEditText"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="35dp"
         android:background="@drawable/round_corners_bg"
         android:paddingStart="10dp"
@@ -85,12 +90,11 @@
         android:layout_below="@id/passwordEditText"
         android:layout_marginTop="20dp"/>
 
-    <Button
+    <android.widget.Button
         android:id="@+id/buttonRegister"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/create_new_account"
-        android:background="@drawable/green_rectangle_button"
+        style="@style/MyButton"
         android:layout_below="@id/confirmPasswordEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"/>
