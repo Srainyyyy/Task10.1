@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blue_gradient_background"
+    android:padding="30dp">
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#146FD3"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="username@example.com"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="240dp"
+                android:background="@drawable/admin"/>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewNotifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardView"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#48E3D1"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imageViewNotifications"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/remind"/>
+
+            <TextView
+                android:id="@+id/textViewNotifications"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageViewNotifications"
+                android:text="Display any important information here"
+                android:textColor="#040404"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTotalQuestions"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/cardViewNotifications"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#146FD3"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/textViewTotalQuestions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Questions"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:layout_below="@id/textViewTotalQuestions">
+
+                <ImageView
+                    android:id="@+id/questionImage"
+                    android:layout_marginTop="11dp"
+                    android:layout_width="31dp"
+                    android:layout_height="31dp"
+                    android:src="@drawable/airticle"/>
+
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="3dp"
+                    android:text="10"
+                    android:textColor="#FFFFFF"
+                    android:textSize="33sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewCorrectlyAnswered"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/cardViewNotifications"
+        android:layout_toEndOf="@id/cardViewTotalQuestions"
+        android:layout_margin="8dp"
+        android:layout_marginStart="20dp"
+        app:cardBackgroundColor="#146FD3"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/textViewCorrectlyAnswered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Correctly Answered"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:layout_below="@id/textViewCorrectlyAnswered">
+
+                <ImageView
+                    android:id="@+id/questionImage1"
+                    android:layout_marginTop="11dp"
+                    android:layout_width="31dp"
+                    android:layout_height="31dp"
+                    android:src="@drawable/airticle"/>
+
+                <TextView
+                    android:id="@+id/textViewNumberCorrectAnswers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="3dp"
+                    android:text="10"
+                    android:textColor="#FFFFFF"
+                    android:textSize="33sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewWrapCards"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_below="@id/cardViewTotalQuestions"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#146FD3"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewIncorrectAnswers"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/cardViewTotalQuestions"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        app:cardBackgroundColor="#146FD3"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/textViewIncorrectAnswers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incorrect Answers"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:layout_below="@id/textViewIncorrectAnswers">
+
+                <ImageView
+                    android:id="@+id/questionImage2"
+                    android:layout_marginTop="11dp"
+                    android:layout_width="31dp"
+                    android:layout_height="31dp"
+                    android:src="@drawable/airticle"/>
+
+
+                <TextView
+                    android:id="@+id/textViewNumberIncorrectAnnswers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="3dp"
+                    android:text="10"
+                    android:textColor="#FFFFFF"
+                    android:textSize="33sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSummarize"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@id/cardViewCorrectlyAnswered"
+        android:layout_toEndOf="@id/cardViewIncorrectAnswers"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="#146FD3"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewSummarizedByAi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                app:cardBackgroundColor="#48E3D1"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <!-- Content inside CardView -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="2dp">
+
+                    <ImageView
+                        android:id="@+id/imageViewAiIcon"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_marginStart="2dp"
+                        android:src="@drawable/star"/>
+
+                    <TextView
+                        android:id="@+id/textViewSummarizedByAi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/imageViewAiIcon"
+                        android:text="Summarized By AI"
+                        android:textColor="#040404"
+                        android:layout_marginStart="3dp"
+                        android:textSize="11sp"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textViewQueryTheLlm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardViewSummarizedByAi"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:text="Query the LLM to get a summary for your incorrect answers"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"/>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewShareButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardViewIncorrectAnswers"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:padding="8dp"
+        android:clickable="true"
+        app:cardBackgroundColor="#53DA03"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share"
+                android:padding="6dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="26sp" />
+
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="3dp"
+                android:contentDescription="Share icon"
+                android:src="@drawable/backbutton" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

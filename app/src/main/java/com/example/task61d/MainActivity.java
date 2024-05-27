@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     // 启动测验Activity
     private void startQuizActivity(String username) {
-        Intent intent = new Intent(MainActivity.this, Quiz_initial.class);
+        Intent intent = new Intent(MainActivity.this, MenuActivity.class);
         intent.putExtra("username", username);
         startActivity(intent);
         finish();
