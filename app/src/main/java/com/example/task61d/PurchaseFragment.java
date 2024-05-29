@@ -25,7 +25,7 @@ public class PurchaseFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 使用发布密钥初始化Stripe
-        PaymentConfiguration.init(requireContext(), "pk_test_YourPublishableKey");
+        PaymentConfiguration.init(requireContext(), "AIzaSyD7YpUhNdIY5Lbd8qxtT1q7bvO3XPeyl4U");
         // 创建Stripe实例
         stripe = new Stripe(requireContext(), PaymentConfiguration.getInstance(requireContext()).getPublishableKey());
     }
